@@ -1,0 +1,16 @@
+schema {
+	query: Query
+}
+
+type Query {
+	allAthletes: [Athlete]
+	athlete(id: String): Athlete
+}
+
+type Athlete {
+	id: Int
+	name: String
+	sport: String
+	age: Int
+	sponsors: [String]
+}
