@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>spring-boot-graphql-example</name>
-	<description>Demo project for Spring Boot and GraphQL</description>
+	<description>Demo project for Spring Boot, GraphQL and PostgreSQL</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -48,7 +48,6 @@
 		<dependency>
 		  <groupId>org.postgresql</groupId>
 		  <artifactId>postgresql</artifactId>
-		  <version>9.4-1206-jdbc42</version>
 		</dependency>
 		<!-- GraphQL -->
 		<dependency>

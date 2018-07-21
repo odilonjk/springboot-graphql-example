@@ -13,8 +13,8 @@ import com.github.odilonjk.springbootgraphqlexample.service.GraphQLService;
 import graphql.ExecutionResult;
 
 @RestController
-@RequestMapping("/rest/artist")
-public class ArtistController {
+@RequestMapping("/rest/metal-archives")
+public class MetalArchivesController {
 
 	@Autowired
 	private GraphQLService graphQLService;

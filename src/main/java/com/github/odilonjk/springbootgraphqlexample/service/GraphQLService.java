@@ -11,7 +11,9 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 import com.github.odilonjk.springbootgraphqlexample.service.dataFetcher.AllArtistsDataFetcher;
+import com.github.odilonjk.springbootgraphqlexample.service.dataFetcher.AllBandsDataFetcher;
 import com.github.odilonjk.springbootgraphqlexample.service.dataFetcher.ArtistDataFetcher;
+import com.github.odilonjk.springbootgraphqlexample.service.dataFetcher.BandDataFetcher;
 
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
@@ -23,7 +25,7 @@ import graphql.schema.idl.TypeDefinitionRegistry;
 @Service
 public class GraphQLService {
 
-	@Value("classpath:artist.graphqls")
+	@Value("classpath:metal-archives.graphqls")
 	Resource resource;
 
 	private GraphQL graphQL;
@@ -32,7 +34,13 @@ public class GraphQLService {
 	private AllArtistsDataFetcher allArtistsDataFetcher;
 
 	@Autowired
+	private AllBandsDataFetcher allBandsDataFetcher;
+
+	@Autowired
 	private ArtistDataFetcher artistDataFetcher;
+	
+	@Autowired
+	private BandDataFetcher bandDataFetcher;
 
 	@PostConstruct
 	public void loadSchema() throws IOException {
@@ -47,7 +55,9 @@ public class GraphQLService {
 		return RuntimeWiring
 				.newRuntimeWiring().type("Query", typeWiring -> typeWiring
 						.dataFetcher("allArtists", allArtistsDataFetcher)
-						.dataFetcher("artist", artistDataFetcher))
+						.dataFetcher("allBands", allBandsDataFetcher)
+						.dataFetcher("artist", artistDataFetcher)
+						.dataFetcher("band", bandDataFetcher))
 				.build();
 	}
 

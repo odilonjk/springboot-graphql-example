@@ -1,0 +1,35 @@
+schema {
+	query: Query
+}
+
+type Query {
+	allArtists: [Artist]
+	allBands: [Band]
+	artist(id: Int): Artist
+	band(id: Int): Band
+}
+
+type Country {
+	id: Int!
+	name: String!
+}
+
+type MusicianRole {
+	id: Int!
+	name: String!
+}
+
+type Band {
+	id: Int!
+	name: String!
+	members: [Artist]!
+	country: Country!
+}
+
+type Artist {
+	id: Int!
+	name: String!
+	age: Int
+	roles: [MusicianRole]
+	bands: [Band]
+}
