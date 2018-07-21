@@ -13,14 +13,14 @@ import com.github.odilonjk.springbootgraphqlexample.service.GraphQLService;
 import graphql.ExecutionResult;
 
 @RestController
-@RequestMapping("/rest/athlete")
-public class AthleteController {
+@RequestMapping("/rest/artist")
+public class ArtistController {
 
 	@Autowired
 	private GraphQLService graphQLService;
 
 	@PostMapping
-	public ResponseEntity<ExecutionResult> getAllBooks(@RequestBody String query) {
+	public ResponseEntity<ExecutionResult> getArtists(@RequestBody String query) {
 		ExecutionResult result = graphQLService.getGraphQL().execute(query);
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}

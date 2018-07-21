@@ -5,22 +5,22 @@ import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.github.odilonjk.springbootgraphqlexample.model.Athlete;
-import com.github.odilonjk.springbootgraphqlexample.repository.AthleteRepository;
+import com.github.odilonjk.springbootgraphqlexample.model.Artist;
+import com.github.odilonjk.springbootgraphqlexample.repository.ArtistRepository;
 
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
 
 @Component
-public class AthleteDataFetcher implements DataFetcher<Athlete> {
+public class ArtistDataFetcher implements DataFetcher<Artist> {
 
 	@Autowired
-	private AthleteRepository athleteRepository;
+	private ArtistRepository artistRepository;
 	
 	@Override
-	public Athlete get(DataFetchingEnvironment environment) {
+	public Artist get(DataFetchingEnvironment environment) {
 		Integer id = environment.getArgument("id");
-		return athleteRepository.findById(id)
+		return artistRepository.findById(id)
 				.orElseThrow(() -> new EntityNotFoundException("Entity with ID " + id + " wasn't found."));
 	}
 

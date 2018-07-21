@@ -3,9 +3,9 @@ package com.github.odilonjk.springbootgraphqlexample.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.github.odilonjk.springbootgraphqlexample.model.Athlete;
+import com.github.odilonjk.springbootgraphqlexample.model.Artist;
 
 @Repository
-public interface AthleteRepository extends JpaRepository<Athlete, Integer> {
+public interface ArtistRepository extends JpaRepository<Artist, Integer> {
 
 }

@@ -1,0 +1,14 @@
+schema {
+	query: Query
+}
+
+type Query {
+	allArtists: [Artist]
+	artist(id: Int): Artist
+}
+
+type Artist {
+	id: Int
+	name: String
+	age: Int
+}

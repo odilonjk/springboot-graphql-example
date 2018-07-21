@@ -15,17 +15,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Athlete {
+public class Artist {
 
 	@Id
 	private int id;
 
 	private String name;
 
-	private String sport;
-
-	private int age;
-
-	private String[] sponsors;
+	private Integer age;
 
 }
